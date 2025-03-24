@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: helloworld-applicationset
+  name: helloworld
 spec:
   generators:
     - list:
