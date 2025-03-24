@@ -4,22 +4,22 @@ metadata:
   name: helloworld
 spec:
   generators:
-    - list:
-        elements:
-          - namespace: staging
-          - namespace: production
+  - list:
+      elements:
+        - environment: staging
+        - environment: production
   template:
     metadata:
-      name: helloworld-{{.namespace}}
+      name: helloworld-{{.environment}}
     spec:
       project: default
       source:
-        path: helloworld/app/
+        path: nginx-helloworld/app/
         repoURL: https://github.com/FinnianDempsey/gitops-apps.git
         targetRevision: HEAD
       destination:
         name: in-cluster
-        namespace: {{.namespace}}
+        namespace: '{{.environment}}'
       syncPolicy:
         automated:
           prune: true
