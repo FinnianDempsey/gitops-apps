@@ -10,7 +10,7 @@ spec:
         - environment: production
   template:
     metadata:
-      name: helloworld-{{.environment}}
+      name: 'helloworld-{{.environment}}'
     spec:
       project: default
       source:
