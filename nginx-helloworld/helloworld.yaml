@@ -17,6 +17,9 @@ spec:
         path: nginx-helloworld/app/
         repoURL: https://github.com/FinnianDempsey/gitops-apps.git
         targetRevision: HEAD
+        helm:
+          valueFiles:
+          - 'values-{{environment}}.yaml'
       destination:
         name: in-cluster
         namespace: '{{environment}}'
