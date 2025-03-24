@@ -1,29 +1,36 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
-  name: helloworld
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io/foreground
+  name: helloworld-applicationset
 spec:
-  project: default
-  source:
-    path: helloworld/app/
-    repoURL: https://github.com/FinnianDempsey/gitops-apps.git
-    targetRevision: HEAD
-  destination:
-    name: in-cluster
-    namespace: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-      allowEmpty: false
-    syncOptions:
-      - PrunePropagationPolicy=foreground
-      - Replace=false
-      - PruneLast=false
-      - Validate=true
-      - CreateNamespace=true
-      - ApplyOutOfSyncOnly=false
-      - ServerSideApply=true
-      - RespectIgnoreDifferences=false
+  generators:
+    - list:
+        elements:
+          - namespace: staging
+          - namespace: production
+  template:
+    metadata:
+      name: helloworld-{{namespace}}
+    spec:
+      project: default
+      source:
+        path: helloworld/app/
+        repoURL: https://github.com/FinnianDempsey/gitops-apps.git
+        targetRevision: HEAD
+      destination:
+        name: in-cluster
+        namespace: {{namespace}}
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: false
+        syncOptions:
+          - PrunePropagationPolicy=foreground
+          - Replace=false
+          - PruneLast=false
+          - Validate=true
+          - CreateNamespace=true
+          - ApplyOutOfSyncOnly=false
+          - ServerSideApply=true
+          - RespectIgnoreDifferences=false
