@@ -15,7 +15,7 @@ spec:
           - 'values-production.yaml'
   destination:
     name: in-cluster
-    namespace: default
+    namespace: production
   syncPolicy:
     automated:
       prune: true

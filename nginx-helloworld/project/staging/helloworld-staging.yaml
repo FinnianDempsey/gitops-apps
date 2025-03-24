@@ -15,7 +15,7 @@ spec:
           - 'values-staging.yaml'
   destination:
     name: in-cluster
-    namespace: default
+    namespace: staging
   syncPolicy:
     automated:
       prune: true
