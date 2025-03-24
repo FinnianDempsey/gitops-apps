@@ -10,7 +10,7 @@ spec:
           - namespace: production
   template:
     metadata:
-      name: helloworld-{{namespace}}
+      name: helloworld-{{.namespace}}
     spec:
       project: default
       source:
@@ -19,7 +19,7 @@ spec:
         targetRevision: HEAD
       destination:
         name: in-cluster
-        namespace: {{namespace}}
+        namespace: {{.namespace}}
       syncPolicy:
         automated:
           prune: true
