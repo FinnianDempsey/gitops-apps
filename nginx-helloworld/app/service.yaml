@@ -12,6 +12,8 @@ spec:
       nodePort: 30090
       {{- else if eq .Release.Namespace "staging" }}
       nodePort: 30080
+      {{- else }}
+      nodePort: 30070
       {{- end }}
   selector:
     app: {{ .Release.Name }}-nginx
