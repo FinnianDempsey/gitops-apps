@@ -8,6 +8,12 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      nodePort: {{ .Values.service.nodePort }}
+      {{- if eq .Release.Namespace "production" -}}
+      nodePort: {{ .Values.service.productionNodePort }}
+      {{- else if eq .Release.Namespace "staging" -}}
+      nodePort: {{ .Values.service.stagingNodePort }}
+      {{- else -}}
+      nodePort: {{ .Values.service.defaultNodePort }}
+      {{- end }}
   selector:
     app: {{ .Release.Name }}-nginx
