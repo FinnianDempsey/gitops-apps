@@ -12,7 +12,7 @@ spec:
     targetRevision: HEAD
     helm:
           valueFiles:
-          - 'values-staging.yaml'
+          - 'values.yaml'
   destination:
     name: in-cluster
     namespace: staging

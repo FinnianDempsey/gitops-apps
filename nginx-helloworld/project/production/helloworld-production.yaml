@@ -12,7 +12,7 @@ spec:
     targetRevision: HEAD
     helm:
           valueFiles:
-          - 'values-production.yaml'
+          - 'values.yaml'
   destination:
     name: in-cluster
     namespace: production
