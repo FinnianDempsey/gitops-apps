@@ -5,3 +5,8 @@ replicaCount: 1
 image:
   repository: nginx
   tag: stable
+
+service:
+  productionNodePort: 30090 
+  stagingNodePort: 30080     
+  defaultNodePort: 30070     

@@ -9,11 +9,11 @@ spec:
     - port: 80
       targetPort: 80
       {{- if eq .Release.Namespace "production" -}}
-      nodePort: 30090
+      nodePort: {{ .Values.service.productionNodePort }}
       {{- else if eq .Release.Namespace "staging" -}}
-      nodePort: 30080
+      nodePort: {{ .Values.service.stagingNodePort }}
       {{- else -}}
-      nodePort: 30070
-      {{- end -}}
+      nodePort: {{ .Values.service.defaultNodePort }}
+      {{- end }}
   selector:
     app: {{ .Release.Name }}-nginx
