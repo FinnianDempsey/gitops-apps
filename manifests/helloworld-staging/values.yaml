@@ -6,4 +6,4 @@ image:
   repository: nginx
   tag: stable
 
-test: test9
+test: test
