@@ -5,5 +5,5 @@ replicaCount: 1
 image:
   repository: nginx
   tag: stable
-
-  test: test
+  
+test: test
