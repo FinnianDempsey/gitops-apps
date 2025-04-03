@@ -1,6 +1,6 @@
-test: &deploymentId 4
+test: 5
 
-deploymentId: *deploymentId
+deploymentId: 5
 
 replicaCount: 1
 
