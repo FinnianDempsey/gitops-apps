@@ -6,4 +6,4 @@ image:
   repository: nginx
   tag: stable
 
-test: &deploymentId 5
+test: &deploymentId 6
