@@ -1,4 +1,4 @@
-deploymentId: &deploymentId 4
+deploymentId: *deploymentId
 
 replicaCount: 1
 
@@ -6,4 +6,4 @@ image:
   repository: nginx
   tag: stable
 
-test: *deploymentId
+test: &deploymentId 5
