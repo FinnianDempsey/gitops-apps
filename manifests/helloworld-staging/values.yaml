@@ -4,6 +4,6 @@ replicaCount: 1
 
 image:
   repository: nginx
-  tag: stable
+  tag: 1.27.0
 
 test: *deploymentId
