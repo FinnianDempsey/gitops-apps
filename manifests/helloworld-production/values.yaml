@@ -4,6 +4,6 @@ replicaCount: 1
 
 image:
   repository: nginx
-  tag: 1.27.0
+  tag: 1.28.0
 
 test: 8
