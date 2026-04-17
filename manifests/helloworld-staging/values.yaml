@@ -3,7 +3,7 @@ deploymentId: &deploymentId 8
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: 1.27.0
+  repository: finnoctodocker/nginx-octodocker
+  tag: v1
 
 test: *deploymentId
