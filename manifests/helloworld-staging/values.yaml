@@ -4,6 +4,6 @@ replicaCount: 1
 
 image:
   repository: finnoctodocker/nginx-octodocker
-  tag: v1
+  tag: v2
 
 test: *deploymentId
