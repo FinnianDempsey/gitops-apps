@@ -6,7 +6,7 @@ metadata:
   annotations:
     argo.octopus.com/project: "argo"
     argo.octopus.com/environment: "local"
-    argo.octopus.com/image-replace-paths: "docker.io/{{ .Values.agent.image.repository }}:{{ .Values.agent.image.tag }}"
+    argo.octopus.com/image-replace-paths: "docker.io/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
