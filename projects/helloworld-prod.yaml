@@ -11,12 +11,12 @@ metadata:
 spec:
   project: default
   source:
-    path:  manifests/helloworld-production/
+    path: manifests/helloworld-production/
     repoURL: https://github.com/FinnianDempsey/gitops-apps.git
     targetRevision: HEAD
     helm:
       valueFiles:
-      - 'values.yaml'
+        - values.yaml
   destination:
     name: in-cluster
     namespace: production
