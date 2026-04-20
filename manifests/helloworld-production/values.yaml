@@ -4,4 +4,5 @@ replicaCount: 1
 
 image:
   repository: finnoctodocker/nginx-helloworld
-  tag: 0.0.1
+  tag: #{Octopus.Release.Number}
+
