@@ -10,6 +10,6 @@ data:
     <html>
     <head><title>Octopus Helm Deployment</title></head>
     <body>
-<p>Namespace: {{ .Release.Namespace }}</p>
+    <p>Namespace: {{ .Release.Namespace }}</p>
     </body>
     </html>
