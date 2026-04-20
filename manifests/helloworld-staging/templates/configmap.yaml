@@ -9,5 +9,6 @@ data:
     <head><title>Octopus Helm Deployment</title></head>
     <body>
     <p>Namespace: {{ .Release.Namespace }}</p>
+    <p>Tag: {{ .Values.image.tag }}</p>
     </body>
     </html>
