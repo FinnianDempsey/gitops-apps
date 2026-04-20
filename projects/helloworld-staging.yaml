@@ -3,9 +3,9 @@ kind: Application
 metadata:
   name: helloworld-staging
   annotations:
-    argo.octopus.com/project: "argo"
-    argo.octopus.com/environment: "staging"
-    argo.octopus.com/image-replace-paths: "docker.io/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+    argo.octopus.com/project.local-mac: "argo"
+    argo.octopus.com/environment.local-mac: "staging"
+    argo.octopus.com/image-replace-paths.local-mac: "docker.io/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
   finalizers:
     - resources-finalizer.argocd.argoproj.io/foreground
 spec:
