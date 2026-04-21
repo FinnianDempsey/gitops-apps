@@ -2,4 +2,4 @@ replicaCount: 1
 
 image:
   repository: finnoctodocker/nginx-helloworld
-  tag: #{Octopus.Action.Package[Update Argo CD Application Manifests].Version}
+  tag: #{Octopus.Release.Number}
