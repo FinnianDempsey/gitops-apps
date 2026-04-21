@@ -1,9 +1,5 @@
-deploymentId: &deploymentId 8
-
 replicaCount: 1
 
 image:
   repository: finnoctodocker/nginx-helloworld
   tag: 0.0.2
-
-test: *deploymentId
