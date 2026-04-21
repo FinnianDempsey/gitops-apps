@@ -2,4 +2,4 @@ replicaCount: 1
 
 image:
   repository: finnoctodocker/nginx-helloworld
-  tag: 0.0.2
+  tag: 0.0.3
